@@ -56,6 +56,13 @@
   
 
 </head>
+   
+   <style type="text/css">
+        /**普通指针样式**/
+        body{cursor:url(https://hexo-1251213061.cos.ap-beijing.myqcloud.com/x/dorcandy.cur),default;}//默认鼠标效果
+        /**链接指针样式**/
+        a:hover{cursor:url(https://hexo-1251213061.cos.ap-beijing.myqcloud.com/x/pointer.cur),pointer;}//链接选择效果
+        </style>
 
    <style type="text/css" lang="css">
     #loading-container{
@@ -188,7 +195,88 @@
     loaded();
 })()
 </script>
+
+  
+<body>
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
       
+
+
+<div class="overlay" style="background: #4d4d4d;"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/img/head.jpg" class="js-avatar">
+		</a>
+		<hgroup>
+			<h1 class="header-author"><a href="/">LUALKAID</a></h1>
+		</hgroup>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/" target="_blank">主页</a></li>
+			
+				<li><a href="https://zhousiwei.gitee.io/ibooks/" target="_blank">技术笔记</a></li>
+			
+				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" target="_blank">随笔</a></li>
+			
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+			
+				
+					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+				
+			
+				
+					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+				
+			
+				
+					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+				
+			
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					
+						<a class="github" href="https://github.com/LUALKAID/LUALKAID.github.io/tree/main" 
+												title="GitHub" target="_blank"><i class="icon-github"></i></a>
+					
+				
+					
+						<a class="zhihu" href="https://www.zhihu.com/people/lu-a-ti-65" 
+												title="知乎" target="_blank"><i class="icon-zhihu"></i></a>
+					
+				
+					
+						<a class="qq" href="/3262550147" 
+												title="QQ" target="_blank"><i class="icon-qq"></i></a>
+					
+				
+			</div>
+		
+			
+			
+			
+			
+			<div>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1394953983&auto=1&height=66"></iframe>
+			</div>
+			
+				
+				<p style="font-size: 12px;">我的最爱！<p>
+			
+		
+		</nav>
+	</header>		
+</div>
+
 <!--春节代码-->
      <div id="loading-container">
              <p class="loading-text">嘘~  LUALKAID 的 小破blog 正在拼命加载中 . . . </p> 
@@ -1019,6 +1107,24 @@
 
   
   
+  
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" >&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">快来召唤鹅鹅吧ε=ε=ε=(~￣▽￣)~</h4>
+                    </div>
+                    <div class="modal-body">
+                        你在鹅鹅这停留了60秒了,是不是爱上了鹅鹅,快来向鹅鹅表白吧o(*////▽////*)q
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="goBlog()">去鹅鹅博客看看!</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="contact()">来吧♂</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </body>
 

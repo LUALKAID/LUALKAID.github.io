@@ -63,6 +63,19 @@
         /**链接指针样式**/
         a:hover{cursor:url(https://hexo-1251213061.cos.ap-beijing.myqcloud.com/x/pointer.cur),pointer;}//链接选择效果
         </style>
+<style>
+    #Snow{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        background: rgba(125,137,95,0.1);
+        pointer-events: none;
+    }
+</style>
+
 
    <style type="text/css" lang="css">
     #loading-container{
@@ -605,7 +618,15 @@
 <p>手电的光透过掌背</p>
 <p>仿佛看见跌入云端的海豚</p>
 <p>—-毕赣 路边野餐</p>
-
+<div class="botui-container" id="me" style="min-height:300px; padding:2px 6px 4px 6px;  border-radius: 10px; 2px solid">
+    <center><h4>与 Alkaid 对话中...</h4></center>
+    <bot-ui>
+        <center>
+            <div style="background-repeat: no-repeat; background-size: 10em; background-position: center center; height: 10em; background-image: url(&quot;https://cdn.jsdelivr.net/gh/Fog-Forest/cdn@1.7/botui/loading.svg&quot;);" class=" lazyloaded" data-bg="https://cdn.jsdelivr.net/gh/Fog-Forest/cdn@1.7/botui/loading.svg"></div>
+            <p><a href="javascript:location.reload();" target="_blank" rel="nofollow">♐加载中[如果加载不出请点击刷新页面]♐</a></p>
+        </center>
+    </bot-ui>
+</div>
     
 
     
@@ -1056,76 +1077,31 @@
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/plugins/ribbon.js/ribbon.min.js"></script> -->
   
   
-    <script type="text/javascript" src="/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
-<script type="text/javascript">
-  /**
-   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
-   */
-  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
-    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
-  //特定的模型json文件名称
-  var modelPathJson = {
-    "epsilon2_1": "Epsilon2.1",
-    "gf": "Gantzert_Felixander",
-    "haru/01": "haru01",
-    "haru/02": "haru02",
-    "nietzsche": "nietzche"
-  }
-
   
-    var modelName = "miku";
-  
-
-  var modelJsonPath = "";
-  if (modelPathJson[modelName]) {
-    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
-      ".model.json";
-  } else {
-    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
-  }
-  L2Dwidget.init({
-    model: {
-      jsonPath: modelJsonPath
-    },
-    display: {
-       position: "right", 
-       width: 237, 
-       height: 515, 
-       hOffset: 50, 
-      
-    },
-    mobile: {
-      
-       scale: 0.5 
-    },
-    react: {
-       opacity: 0.8 
-    }
-  })
-
-</script>
-
+  <script type="text/javascript" src="/lib/snow.js"></script>
+  <script type="text/javascript" src="/lib/jquery-2.1.4.min.js"></script>
+  <script>
+    snow.down();
+    $(window).resize(function() {
+      $("canvas").css("z-index","500").remove();
+      snow.down();
+    });
+  </script>
   
   
-  
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" >&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">快来召唤鹅鹅吧ε=ε=ε=(~￣▽￣)~</h4>
-                    </div>
-                    <div class="modal-body">
-                        你在鹅鹅这停留了60秒了,是不是爱上了鹅鹅,快来向鹅鹅表白吧o(*////▽////*)q
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="goBlog()">去鹅鹅博客看看!</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="contact()">来吧♂</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+ <body id="body" class="fix-padding">
 
+<div class="pio-container left static"style="position: fixed; right: 50px; bottom: -20px; width: 237px; height: 515px; z-index: 99999; opacity: 0.8; pointer-events: none;"><div class="pio-action"></div><canvas id="pio" width="300" height="500"></canvas><div class="pio-dialog">欢迎来到本站！</div></div><script src="https://233i.me/usr/plugins/Pio/static/l2d.js"></script>
+<script src="https://233i.me/usr/plugins/Pio/static/pio.js"></script>
+<script>var pio = new Paul_Pio({"mode":"static","hidden":false,"content":[],"model":["https://233i.me/usr/plugins/Pio/models/Mei/model.json"]});</script><script type="text/javascript" src="https://233i.me/usr/plugins/DPlayer/plugin/hls.min.js"></script>
+<script type="text/javascript" src="https://233i.me/usr/plugins/DPlayer/plugin/flv.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<script type="text/javascript" src="https://233i.me/usr/plugins/DPlayer/assets/player.js"></script>
+
+</body> 
+   
 </body>
+
+
 
 </html>

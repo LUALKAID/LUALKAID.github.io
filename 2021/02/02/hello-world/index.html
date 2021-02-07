@@ -577,7 +577,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/default.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -604,7 +604,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5 字
+      147 字
     </span>
   
 
@@ -614,7 +614,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -655,9 +655,49 @@
             <h1 style="display: none">小工具测试</h1>
             
             <div class="markdown-body">
-              <h2 id="浏览量测试"><a href="#浏览量测试" class="headerlink" title="浏览量测试"></a>浏览量测试</h2><img src="https://github-readme-stats.vercel.app/api?username=LCYLYM" srcset="/img/loading.gif" alt="Anurag's github stats" title="About Me app, aria, back, bot, botui, c, ce, com, cover, de, div, do, fu, github, he, hi, his, https, ip, ll, loading, loli, me, min, net, new, ni, no, over, pin, pop, re, ro, sh, share, show, so, style, ta, ui, up, when, www, 二次元, 刷新, 博客, 大佬, 对话, 网站 2" data-src="https://github-readme-stats.vercel.app/api?username=LCYLYM" class=" lazyloaded">
+              <script>
+  randomSoul();
+  function randomNumBoth(min,max){
+    var range = max - min;
+    var rand = Math.random();
+    var num = min + Math.round(rand * range);
+    return num;
+  }
+  var date = new Date();
+  var year = date.getFullYear().toString(); 
+  var month = (date.getMonth() + 1).toString();
+  var day = date.getDate().toString();
 
-<p><img src="image.jpg" srcset="/img/loading.gif" alt="https://cher112.top/posts/6161fe24.html"></p>
+  var city = localStorage.getItem('city') || '';
+  var cloud = localStorage.getItem('cloud') || '';
+  var cond = localStorage.getItem('cond') || '';
+  var dateStart = new Date(localStorage.getItem('date') || new Date());
+  var dayDiff = date.getDate() - dateStart.getDate();
+  if(city == '' || dayDiff >= 1) {
+    $.post(
+      'https://free-api.heweather.net/s6/weather/now?location=auto_ip&key=053bddc78cac4f058f012587026945df',
+      function(data){
+        var weather = data.HeWeather6[0] || {};
+        city = weather.basic.parent_city || '';
+        cloud = weather.now.fl || ''
+        cond = weather.now.cond_txt || ''
+        localStorage.setItem('city',city);
+        localStorage.setItem('cloud',cloud);
+        localStorage.setItem('cond',cond);
+        localStorage.setItem('date',new Date());
+        renderWeather();
+      },'json'
+    ) // 天气结束
+  } else {
+    renderWeather();
+  }
+  function renderWeather(){
+    var weatherHTML = '<time>'+ year+'-'+month+'-'+day+'</time><span>'+city+'·'+cond+'·'+cloud+'&#8451;</span>'
+    $('address').html(weatherHTML);
+  }
+
+</script>
+
 
             </div>
             <hr>
@@ -703,7 +743,7 @@
       };
       Fluid.utils.waitElementVisible('disqus_thread', function () {
         var d = document, s = d.createElement('script');
-        s.src = '//' + '' + '.disqus.com/embed.js';
+        s.src = '//' + 'fluid' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', new Date());
         (d.head || d.body).appendChild(s);
       });
@@ -954,6 +994,8 @@
 <script type="text/javascript" src="https://233i.me/usr/plugins/DPlayer/assets/player.js"></script>
 
 </body> 
+
+
 
 </body>
 </html>
